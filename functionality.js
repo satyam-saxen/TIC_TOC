@@ -16,3 +16,17 @@ function handleClick(){
 		}
 	} 
 }
+
+function resetGame(event){
+	let scoreElements = document.getElementsByClassName("score");
+	for(let index=0;index<scoreElements.length;index++){
+		scoreElements[0].innerHTML = 0;
+	}
+	clearGrid();
+}
+
+function clearGrid(){
+	for(let index=0;index<numberOfButtons;index++){
+		document.querySelectorAll(".grid-item")[index].innerHTML = "";
+	}
+}
