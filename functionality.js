@@ -41,7 +41,7 @@ function handleClick(){
 		running = false;
 		let number = document.getElementById("tie").innerHTML;
 		number++;
-		document.getElementById("p2").innerHTML = number;
+		document.getElementById("tie").innerHTML = number;
 		document.getElementById("play").innerHTML = "Whoa , It's tie";
 	}
 }
