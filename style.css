@@ -10,7 +10,7 @@
 	background-color: #2F4F4F
 }
 
-#welcome-text{
+#welcome-text,#play{
 	font-size: 40px;
 	font-family: lato,sans-serif;
 	text-align: center;
