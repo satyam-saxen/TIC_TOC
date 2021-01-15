@@ -27,6 +27,19 @@
 	align-content: center;
 }
 
+#middle{
+	justify-content: center;
+}
+
+.btn{
+	margin: 0px;
+	padding:0px;
+	background-color: solid blue;
+	text-align: center;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
 .grid-container{
   display: inline-grid;
   grid-template-columns: auto auto auto;
