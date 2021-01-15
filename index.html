@@ -17,8 +17,8 @@
 		<div class="container">
 			<div class="row" id="middle">
 				<div class="col">
-					<button class="btn" id="reset">Reset</button>
-					<button class="btn" id="nextPlay">Next</button>
+					<button class="btn" id="reset" onclick="resetGame()">Reset</button>
+					<button class="btn" id="nextPlay" onclick="clearGrid()">Next</button>
 				</div>
 				<div class="col-7">
 					<div class="grid-container">
@@ -39,11 +39,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2" >P1:</div>
-				<div class="col-md-2" id="p1">0</div>
+				<div class="col-md-2 score" id="p1">0</div>
 				<div class="col-md-2" >Tie:</div>
-				<div class="col-md-2" id="tie">0</div>
+				<div class="col-md-2 score" id="tie">0</div>
 				<div class="col-md-2" >P2:</div>
-				<div class="col-md-2" id="p2">0</div>
+				<div class="col-md-2 score" id="p2">0</div>
 			</div>
 		</div>
 	</section>
