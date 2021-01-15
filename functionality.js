@@ -2,6 +2,7 @@ let flag = 1;
 let status = false;
 let running = true;
 let count = 0;
+let winningPosition = [];
 let numberOfButtons = document.querySelectorAll(".grid-item").length;
 let winningPositions = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
 for(let index=0;index<numberOfButtons;index++){
@@ -33,6 +34,9 @@ function handleClick(){
 			document.getElementById("p2").innerHTML = number;
 			document.getElementById("play").innerHTML = "Player 2 won!";
 		}
+		document.getElementById(winningPosition[0].id).style.color = "black";
+		document.getElementById(winningPosition[1].id).style.color = "black";
+		document.getElementById(winningPosition[2].id).style.color = "black";
 	}else if(status == false && running == true && count==9){
 		running = false;
 		let number = document.getElementById("tie").innerHTML;
@@ -48,13 +52,13 @@ function winningStatus(){
 	count++;
 	var result = false;
 	for(let index=0;index<winningPositions.length;index++){
-		let pos = [];
-		pos[0] = document.getElementById(winningPositions[index][0]);
-		pos[1] = document.getElementById(winningPositions[index][1]);
-		pos[2] = document.getElementById(winningPositions[index][2]);
+		winningPosition[0] = document.getElementById(winningPositions[index][0]);
+		winningPosition[1] = document.getElementById(winningPositions[index][1]);
+		winningPosition[2] = document.getElementById(winningPositions[index][2]);
 
-		if(pos[0].innerHTML === pos[1].innerHTML && pos[1].innerHTML === pos[2].innerHTML && pos[0].innerHTML != ""){
+		if(winningPosition[0].innerHTML === winningPosition[1].innerHTML && winningPosition[1].innerHTML === winningPosition[2].innerHTML && winningPosition[0].innerHTML != ""){
 			result = true;
+			break;
 		}
 	}
 	return result;
@@ -71,6 +75,7 @@ function resetGame(event){
 function clearGrid(){
 	for(let index=0;index<numberOfButtons;index++){
 		document.querySelectorAll(".grid-item")[index].innerHTML = "";
+		document.querySelectorAll(".grid-item")[index].style.color = "grey";
 	}
 	document.getElementById("play").innerHTML = "Let's play!!";
 	resetCommands();
